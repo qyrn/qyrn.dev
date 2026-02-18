@@ -68,12 +68,10 @@ body {
   padding: 24px;
 }
 
-.label {
-  font-size: 11px;
-  color: var(--green);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .pfp {
@@ -102,10 +100,21 @@ body {
   font-size: 14px;
   color: var(--text-dim);
   letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+
+.arrow {
+  color: var(--green);
+}
+
+.bio {
+  font-size: 11px;
+  color: var(--text-faint);
+  letter-spacing: 1px;
   margin-bottom: 48px;
 }
 
-.links {
+nav {
   display: flex;
   flex-direction: column;
   gap: 28px;
@@ -119,7 +128,6 @@ body {
 
 .link-label {
   font-size: 10px;
-  font-weight: 400;
   color: var(--text-faint);
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -142,7 +150,7 @@ body {
   font-family: inherit;
   text-decoration: none;
   letter-spacing: 0.5px;
-  transition: all 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .link-row a:hover {
@@ -164,18 +172,12 @@ body {
   opacity: 0.5;
 }
 
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 @media (max-width: 768px) {
   .pseudo {
     font-size: clamp(36px, 10vw, 72px);
   }
 
-  .tagline {
+  .bio {
     margin-bottom: 36px;
   }
 
@@ -198,13 +200,11 @@ header {
 
   .tagline {
     font-size: 12px;
-    margin-bottom: 32px;
   }
 
-  .label {
+  .bio {
     font-size: 10px;
-    letter-spacing: 2px;
-    margin-bottom: 16px;
+    margin-bottom: 32px;
   }
 
   .pfp {
@@ -213,7 +213,7 @@ header {
     margin-bottom: 16px;
   }
 
-  .links {
+  nav {
     gap: 20px;
   }
 
