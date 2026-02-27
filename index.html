@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>qyrn | SOC Analyst · Pentester</title>
+  <title>qyrn.dev</title>
   <meta name="description" content="qyrn — Aspiring SOC Analyst on the path to penetration testing. Explore my projects and profiles.">
   <meta name="keywords" content="qyrn, cybersecurity, SOC analyst, pentesting, red team, blue team, CTF">
   <meta name="author" content="qyrn">
@@ -43,15 +43,6 @@
     </header>
     <nav aria-label="Links">
       <div class="link-group">
-        <p class="link-label">Profiles</p>
-        <div class="link-row">
-          <a href="https://github.com/qyrn" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <span class="link-disabled">LinkedIn</span>
-          <a href="https://tryhackme.com/p/qyrn" target="_blank" rel="noopener noreferrer">TryHackMe</a>
-          <a href="https://profile.hackthebox.com/profile/019c5e2f-2184-7309-a6af-ff74d06aa636" target="_blank" rel="noopener noreferrer">HackTheBox</a>
-        </div>
-      </div>
-      <div class="link-group">
         <p class="link-label">Projects</p>
         <div class="link-row">
           <a href="https://vault.qyrn.dev" target="_blank" rel="noopener noreferrer">Vault</a>
@@ -59,7 +50,41 @@
           <a href="https://blog.qyrn.dev" target="_blank" rel="noopener noreferrer">Blog</a>
         </div>
       </div>
+      <div class="link-group">
+        <p class="link-label">Profiles</p>
+        <div class="link-row">
+          <a href="https://github.com/qyrn" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://tryhackme.com/p/qyrn" target="_blank" rel="noopener noreferrer">TryHackMe</a>
+          <a href="https://profile.hackthebox.com/profile/019c5e2f-2184-7309-a6af-ff74d06aa636" target="_blank" rel="noopener noreferrer">HackTheBox</a>
+          <a href="https://www.root-me.org/qyrn?lang=fr#995154a4e3206b8bfaf6b7052b3d9b4b" target="_blank" rel="noopener noreferrer">Root-me</a>
+        </div>
+      </div>
+      <div class="link-group">
+        <p class="link-label">Socials</p>
+        <div class="link-row">
+          <a href="https://x.com/qyrnsec" target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://www.youtube.com/@qyrnsec" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://www.tiktok.com/@qyrnsec" target="_blank" rel="noopener noreferrer">TikTok</a>
+          <a href="https://www.twitch.tv/qyrnsec" target="_blank" rel="noopener noreferrer">Twitch</a>
+          <button class="link-copy" data-copy="qyrnsec" data-label="Discord">Discord</button>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@qyrn.dev" target="_blank" rel="noopener noreferrer">Mail</a>
+        </div>
+      </div>
     </nav>
   </main>
+  <script>
+    document.querySelectorAll('.link-copy').forEach(btn => {
+      btn.addEventListener('click', () => {
+        navigator.clipboard.writeText(btn.dataset.copy).then(() => {
+          btn.textContent = 'Copied!';
+          btn.classList.add('link-copy--done');
+          setTimeout(() => {
+            btn.textContent = btn.dataset.label;
+            btn.classList.remove('link-copy--done');
+          }, 1500);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
