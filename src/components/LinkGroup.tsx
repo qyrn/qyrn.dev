@@ -23,7 +23,7 @@ const springLink = {
 };
 
 function LinkChip({ href, label, icon }: { href: string; label: string; icon?: React.ReactNode }) {
-  const { onPress, ripples } = useRipple();
+  const { onPress, ripples, onClear } = useRipple();
 
   return (
     <motion.a
@@ -31,7 +31,7 @@ function LinkChip({ href, label, icon }: { href: string; label: string; icon?: R
       target="_blank"
       rel="noopener noreferrer"
       className="link-chip relative overflow-hidden"
-      onPointerDown={onPress}
+      onPointerDown={onPress as unknown as React.PointerEventHandler<HTMLAnchorElement>}
       whileHover={{ y: -2 }}
       whileTap={{ scale: 0.96 }}
       transition={springLink}
@@ -42,7 +42,7 @@ function LinkChip({ href, label, icon }: { href: string; label: string; icon?: R
         </span>
       )}
       {label}
-      <Ripple ripples={ripples} color="rgba(124,58,237,0.35)" />
+      <Ripple ripples={ripples} onClear={onClear} color="rgba(124,58,237,0.35)" />
     </motion.a>
   );
 }

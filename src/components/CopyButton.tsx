@@ -16,7 +16,7 @@ const springPress = {
 
 export default function CopyButton({ label, value, icon }: Props) {
   const [copied, setCopied] = useState(false);
-  const { onPress: onRipplePress, ripples } = useRipple();
+  const { onPress: onRipplePress, ripples, onClear } = useRipple();
 
   const handleCopy = () => {
     navigator.clipboard.writeText(value).then(() => {
@@ -29,7 +29,7 @@ export default function CopyButton({ label, value, icon }: Props) {
     <motion.button
       type="button"
       onClick={handleCopy}
-      onPointerDown={onRipplePress}
+      onPointerDown={onRipplePress as unknown as React.PointerEventHandler<HTMLButtonElement>}
       className={`action-chip relative overflow-hidden${copied ? " copied" : ""}`}
       aria-label={`Copy ${label} username`}
       whileHover={{ y: -1 }}
@@ -42,7 +42,7 @@ export default function CopyButton({ label, value, icon }: Props) {
         </span>
       )}
       {copied ? "Copied!" : label}
-      <Ripple ripples={ripples} color="rgba(167,139,250,0.4)" />
+      <Ripple ripples={ripples} onClear={onClear} color="rgba(167,139,250,0.4)" />
     </motion.button>
   );
 }

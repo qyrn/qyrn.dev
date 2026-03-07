@@ -14,7 +14,7 @@ type Props = {
 
 export default function MailButton({ icon }: Props) {
   const [open, setOpen] = useState(false);
-  const { onPress: onRipplePress, ripples } = useRipple();
+  const { onPress: onRipplePress, ripples, onClear } = useRipple();
   const shouldReduceMotion = useReducedMotion();
 
   const [email, setEmail] = useState(() => {
@@ -95,7 +95,7 @@ export default function MailButton({ icon }: Props) {
       <motion.button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        onPointerDown={onRipplePress}
+        onPointerDown={onRipplePress as unknown as React.PointerEventHandler<HTMLButtonElement>}
         className={`action-chip relative overflow-hidden${open ? " copied" : ""}`}
         aria-label="Mail — open contact form"
         aria-expanded={open}
@@ -109,7 +109,7 @@ export default function MailButton({ icon }: Props) {
           </span>
         )}
         Mail
-        <Ripple ripples={ripples} color="rgba(167,139,250,0.4)" />
+        <Ripple ripples={ripples} onClear={onClear} color="rgba(167,139,250,0.4)" />
       </motion.button>
 
       <AnimatePresence>
