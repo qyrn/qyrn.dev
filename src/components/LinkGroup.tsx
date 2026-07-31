@@ -51,13 +51,13 @@ export default function LinkGroup({ label, links }: Props) {
   return (
     <div className="flex flex-col items-center gap-3">
       <p
-        className="text-[10px] font-medium uppercase"
+        className="font-mono text-[10px] font-medium uppercase"
         style={{
-          color: "rgba(255,255,255,0.18)",
-          letterSpacing: "3px",
+          color: "rgba(167,139,250,0.4)",
+          letterSpacing: "2px",
         }}
       >
-        {label}
+        [ {label} ]
       </p>
       <div className="flex flex-wrap justify-center gap-2">
         {links.map((link) => {

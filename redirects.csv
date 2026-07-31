@@ -1,7 +1,7 @@
 SOURCE_URL,TARGET_URL,STATUS,PRESERVE_QUERY_STRING,INCLUDE_SUBPATHS,PRESERVE_PATH_SUFFIX,SUBPATH_MATCHING
 https://qyrn.dev/gh,https://github.com/qyrn,301,false,false,false,false
 https://qyrn.dev/thm,https://tryhackme.com/p/qyrn,301,false,false,false,false
-https://qyrn.dev/htb,https://profile.hackthebox.com/profile/019c5e2f-2184-7309-a6af-ff74d06aa636,301,false,false,false,false
+https://qyrn.dev/htb,https://app.hackthebox.com/public/users/3063253,301,false,false,false,false
 https://qyrn.dev/rm,https://www.root-me.org/qyrn,301,false,false,false,false
 https://qyrn.dev/x,https://x.com/qyrnsec,301,false,false,false,false
 https://qyrn.dev/tt,https://www.tiktok.com/@qyrnsec,301,false,false,false,false

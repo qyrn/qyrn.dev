@@ -35,9 +35,8 @@ export default function Header() {
             inset: -14,
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(124,58,237,0.4) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(124,58,237,0.3) 0%, transparent 70%)",
             filter: "blur(10px)",
-            animation: "pulse-glow 2.8s ease-in-out infinite alternate",
           }}
         />
         <div
@@ -48,27 +47,56 @@ export default function Header() {
             inset: -2,
             borderRadius: "50%",
             background:
-              "conic-gradient(from 0deg, transparent 0deg, #6366f1 80deg, #a78bfa 180deg, #c4b5fd 260deg, #7c3aed 320deg, transparent 360deg)",
-            animation: "spin-ring 2.8s linear infinite",
+              "conic-gradient(from 0deg, transparent 0deg, #7c3aed 70deg, #a78bfa 160deg, #ede9fe 220deg, #7c3aed 300deg, transparent 360deg)",
             willChange: "transform",
           }}
         />
-        <img
-          src="/pfp.png"
-          alt="qyrn"
-          width={96}
-          height={96}
+        <div
           style={{
             position: "absolute",
             inset: 2,
             width: "calc(100% - 4px)",
             height: "calc(100% - 4px)",
             borderRadius: "50%",
-            objectFit: "cover",
+            overflow: "hidden",
             background: "#0a0a0f",
             zIndex: 1,
           }}
-        />
+        >
+          <img
+            src="/pfp.png"
+            alt="qyrn"
+            width={96}
+            height={96}
+            style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+          />
+          <img
+            src="/pfp.png"
+            alt=""
+            aria-hidden="true"
+            className="pfp-ghost pfp-ghost-r"
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+          <img
+            src="/pfp.png"
+            alt=""
+            aria-hidden="true"
+            className="pfp-ghost pfp-ghost-b"
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </div>
       </div>
 
       <h1
@@ -95,7 +123,6 @@ export default function Header() {
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
-              animation: `shimmer-text 4s linear infinite`,
               animationDelay: `${1 + i * 0.15}s`,
             }}
           >
@@ -105,26 +132,50 @@ export default function Header() {
       </h1>
 
       <p
-        className="text-xs font-medium mb-2"
-        style={{
-          color: "rgba(255,255,255,0.32)",
-          letterSpacing: "3.5px",
-          textTransform: "uppercase",
-        }}
+        className="font-mono text-xs mb-1.5"
+        style={{ color: "rgba(255,255,255,0.28)", letterSpacing: "0.3px" }}
       >
-        SOC Analyst{" "}
-        <span style={{ color: "rgba(124,58,237,0.7)" }}>→</span>{" "}
-        Pentester
+        <span
+          className="type-reveal"
+          style={
+            {
+              "--type-w": "9ch",
+              animation: "type-w 0.4s steps(8, end) 1.1s 1 forwards",
+            } as React.CSSProperties
+          }
+        >
+          <span style={{ color: "rgba(167,139,250,0.5)" }}>$</span> whoami
+        </span>
       </p>
 
       <p
-        className="text-xs"
-        style={{
-          color: "rgba(255,255,255,0.18)",
-          letterSpacing: "1.5px",
-        }}
+        className="font-mono text-xs"
+        style={{ color: "rgba(255,255,255,0.42)", letterSpacing: "0.3px" }}
       >
-        Defender mindset. Attacker goals.
+        <span
+          className="type-reveal"
+          style={
+            {
+              "--type-w": "27ch",
+              animation: "type-w 0.9s steps(25, end) 1.7s 1 forwards",
+            } as React.CSSProperties
+          }
+        >
+          <span style={{ color: "rgba(167,139,250,0.65)" }}>&gt;</span> SOC Analyst{" "}
+          <span style={{ color: "rgba(167,139,250,0.65)" }}>→</span> Pentester
+          <span
+            aria-hidden="true"
+            className="cursor-blink"
+            style={{
+              display: "inline-block",
+              width: 6,
+              height: 12,
+              marginLeft: 4,
+              verticalAlign: "-2px",
+              background: "rgba(167,139,250,0.5)",
+            }}
+          />
+        </span>
       </p>
     </header>
   );
