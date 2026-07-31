@@ -35,7 +35,7 @@ const PROFILES = [
   { label: "TryHackMe", href: "https://tryhackme.com/p/qyrn", icon: <SiTryhackme size={13} /> },
   {
     label: "HackTheBox",
-    href: "https://profile.hackthebox.com/profile/019c5e2f-2184-7309-a6af-ff74d06aa636",
+    href: "https://app.hackthebox.com/public/users/3063253",
     icon: <SiHackthebox size={13} />,
   },
   {
