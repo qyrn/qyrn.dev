@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { SiGithub, SiTryhackme, SiHackthebox, SiTiktok } from "react-icons/si";
-import { LuMail } from "react-icons/lu";
+import { LuMail, LuNewspaper } from "react-icons/lu";
 import Header from "./components/Header";
 import LinkGroup from "./components/LinkGroup";
 
@@ -15,6 +15,7 @@ const PROFILES = [
 ];
 
 const ELSEWHERE = [
+  { label: "Blog", href: "https://blog.qyrn.dev", icon: <LuNewspaper size={13} /> },
   { label: "TikTok", href: "https://www.tiktok.com/@qyrnsec", icon: <SiTiktok size={13} /> },
   { label: "Mail", modal: true, icon: <LuMail size={13} /> },
 ];

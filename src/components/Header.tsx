@@ -64,14 +64,14 @@ export default function Header() {
           }}
         >
           <img
-            src="/pfp.png"
+            src="/pfp.webp"
             alt="qyrn"
             width={96}
             height={96}
             style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
           />
           <img
-            src="/pfp.png"
+            src="/pfp.webp"
             alt=""
             aria-hidden="true"
             className="pfp-ghost pfp-ghost-r"
@@ -84,7 +84,7 @@ export default function Header() {
             }}
           />
           <img
-            src="/pfp.png"
+            src="/pfp.webp"
             alt=""
             aria-hidden="true"
             className="pfp-ghost pfp-ghost-b"
@@ -102,9 +102,10 @@ export default function Header() {
       <h1
         className="font-display font-extrabold leading-none mb-4"
         style={{
-          fontSize: "clamp(80px, 18vw, 128px)",
+          fontSize: "clamp(56px, 20vw, 128px)",
           letterSpacing: "-4px",
           perspective: "600px",
+          whiteSpace: "nowrap",
         }}
       >
         {LETTERS.map((letter, i) => (
@@ -114,19 +115,23 @@ export default function Header() {
             variants={letterVariants}
             initial="hidden"
             animate="visible"
-            className="qyrn-shimmer"
-            style={{
-              display: "inline-block",
-              background:
-                "linear-gradient(90deg, #7c3aed 0%, #a78bfa 20%, #c4b5fd 38%, #ede9fe 50%, #c4b5fd 62%, #a78bfa 80%, #7c3aed 100%)",
-              backgroundSize: "200% auto",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-              animationDelay: `${1 + i * 0.15}s`,
-            }}
+            style={{ display: "inline-block" }}
           >
-            {letter}
+            <span
+              className="qyrn-shimmer"
+              style={{
+                display: "inline-block",
+                backgroundImage:
+                  "linear-gradient(90deg, #7c3aed 0%, #a78bfa 20%, #c4b5fd 38%, #ede9fe 50%, #c4b5fd 62%, #a78bfa 80%, #7c3aed 100%)",
+                backgroundSize: "200% auto",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                animationDelay: `${1 + i * 0.15}s`,
+              }}
+            >
+              {letter}
+            </span>
           </motion.span>
         ))}
       </h1>
