@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>rclone-nas, règles de confidentialité</title>
+    <style>
+      :root {
+        --bg: #0a0a0f;
+        --text: #e2e2e8;
+        --muted: #a1a1b5;
+        --accent: #a78bfa;
+        --line: #26263a;
+      }
+
+      html {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Outfit", system-ui, sans-serif;
+        line-height: 1.65;
+      }
+
+      body {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 4rem 1rem 5rem;
+      }
+
+      h1 {
+        margin: 0 0 0.5rem;
+        font-size: 1.9rem;
+        line-height: 1.2;
+      }
+
+      h2 {
+        margin: 2.5rem 0 0.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--line);
+        font-size: 1.1rem;
+      }
+
+      p {
+        margin: 0 0 1rem;
+      }
+
+      .updated {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      a {
+        color: var(--accent);
+      }
+
+      a:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>rclone-nas, règles de confidentialité</h1>
+    <p class="updated">Dernière mise à jour : 6 novembre 2026</p>
+
+    <h2>Ce qu'est rclone-nas</h2>
+    <p>
+      rclone-nas est l'outil de sauvegarde que j'utilise sur mon serveur personnel. Chaque nuit, il
+      dépose une copie de mes propres fichiers dans mon propre Google Drive. Il n'est pas proposé au
+      public et je suis la seule personne à m'en servir.
+    </p>
+
+    <h2>Ce à quoi il accède</h2>
+    <p>
+      rclone-nas demande uniquement l'accès aux fichiers qu'il crée lui-même dans Google Drive. Il ne
+      peut ni lire, ni modifier, ni supprimer le reste du Drive.
+    </p>
+
+    <h2>Ce qu'il fait des données</h2>
+    <p>
+      Les fichiers sont chiffrés sur mon serveur avant d'être envoyés, Google ne voit donc que des
+      données illisibles. Aucune donnée n'est collectée, vendue ni partagée avec qui que ce soit, et
+      cette page n'utilise ni cookie ni statistiques.
+    </p>
+
+    <h2>Retirer l'accès</h2>
+    <p>
+      L'accès peut être retiré à tout moment depuis
+      <a href="https://myaccount.google.com/permissions">la page des accès tiers de votre compte Google</a>.
+    </p>
+
+    <p><a href="https://qyrn.dev">Retour sur qyrn.dev</a></p>
+  </body>
+</html>
